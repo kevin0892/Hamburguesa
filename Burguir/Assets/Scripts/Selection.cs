@@ -24,8 +24,8 @@ public class Selection : MonoBehaviour
 
     void Update()
     {
-        
-        if (Input.GetMouseButtonDown(0))
+
+        /*if (Input.GetMouseButtonDown(0))
         {
             posIni = Input.mousePosition;
         }
@@ -51,10 +51,10 @@ public class Selection : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             Anterior();
-        }
+        }*/
         currentAngle = new Vector3(0, Mathf.LerpAngle(currentAngle.y, targetRot.y, 2.0f * Time.deltaTime));
         transform.eulerAngles = currentAngle;
-        
+
     }
 
     public void Siguiente()

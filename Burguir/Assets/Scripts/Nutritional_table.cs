@@ -8,9 +8,15 @@ public class Nutritional_table : MonoBehaviour
     public int _qtty;
     public TMP_Text statCalorias;
     public TMP_Text stat_Grasas;
+    public GameObject panelTerminos;
     // Start is called before the first frame update
     void Start()
     {
+        if (panelTerminos == null)
+        {
+            panelTerminos = GameObject.Find("Panel_Terminos");
+            panelTerminos.SetActive(false);
+        }
         
     }
 
@@ -40,5 +46,10 @@ public class Nutritional_table : MonoBehaviour
     {
         _qtty = 0;
         statCalorias.text = _qtty.ToString();
+    }
+
+    public void ClosePanelTerminos()
+    {
+        panelTerminos.SetActive(false);
     }
 }

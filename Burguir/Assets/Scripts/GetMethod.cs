@@ -2,14 +2,17 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using TMPro;
  
 public class GetMethod : MonoBehaviour
 {
-    InputField outputArea;
+    public GameObject go_Field;
+    public TMP_InputField outputArea;
  
     void Start()
     {
-        outputArea = GameObject.Find("OutputArea").GetComponent<InputField>();
+        go_Field = GameObject.Find("OutputArea");
+        outputArea = go_Field.GetComponent<TMP_InputField>();
         GameObject.Find("GetButton").GetComponent<Button>().onClick.AddListener(GetData);
     }
  

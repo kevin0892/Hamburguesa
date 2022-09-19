@@ -10,5 +10,10 @@ public class PasarDeEscena : MonoBehaviour
     {
         SceneManager.LoadScene("SelectionScene");
     }
+
+    public void BackHome()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
 
