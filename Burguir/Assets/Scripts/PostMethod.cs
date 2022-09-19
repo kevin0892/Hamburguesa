@@ -2,18 +2,19 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using TMPro;
  
 public class PostMethod : MonoBehaviour
 {
-    InputField outputArea;
+    public TMP_InputField outputArea;
  
     void Start()
     {
-        outputArea = GameObject.Find("OutputArea").GetComponent<InputField>();
-        GameObject.Find("PostButton").GetComponent<Button>().onClick.AddListener(PostData);
+        outputArea = GameObject.Find("OutputArea").GetComponent<TMP_InputField>();
+        //GameObject.Find("PostButton").GetComponent<Button>().onClick.AddListener(PostData);
     }
  
-    void PostData() => StartCoroutine(PostData_Coroutine());
+    public void PostData() => StartCoroutine(PostData_Coroutine());
  
     IEnumerator PostData_Coroutine()
     {
@@ -21,6 +22,8 @@ public class PostMethod : MonoBehaviour
         string uri = "https://6327fad49a053ff9aaadb7e8.mockapi.io/Pedido";
         WWWForm form = new WWWForm();
         form.AddField("title", "test data");
+        form.AddField("Mesa", "003");
+        form.AddField("Pedido", "Pan blanco, Res 3/4, Tomates, Pan blanco");
         using(UnityWebRequest request = UnityWebRequest.Post(uri, form))
         {
             yield return request.SendWebRequest();

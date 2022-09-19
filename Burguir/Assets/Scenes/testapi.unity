@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1802834, g: 0.2257135, b: 0.3069223, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -241,6 +241,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d7aa3adf9e1c845b0417eea09fa6b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  go_Field: {fileID: 0}
+  outputArea: {fileID: 0}
 --- !u!114 &566722519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,6 +255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03e1c108e28600247b31dabb649e48ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outputArea: {fileID: 0}
 --- !u!1 &624559669
 GameObject:
   m_ObjectHideFlags: 0
@@ -1632,7 +1635,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1813241411}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 566722519}
+        m_TargetAssemblyTypeName: PostMethod, Assembly-CSharp
+        m_MethodName: PostData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1813241411
 MonoBehaviour:
   m_ObjectHideFlags: 0
