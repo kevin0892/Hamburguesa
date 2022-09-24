@@ -6,9 +6,10 @@ using UnityEngine.UIElements;
 
 public class Ingredient_Values : MonoBehaviour
 {
-    public int calorias, grasas;
+    public int calorias, grasas, precio;
     public bool selected = false;
     public Nutritional_table n_table;
+    public Precios_table p_table;
     public string panup, vegetal, proteina, pandown, salsas, termino;
     // Start is called before the first frame update
     void Start()
@@ -19,16 +20,19 @@ public class Ingredient_Values : MonoBehaviour
         {
             calorias = 100;
             grasas = 100;
+            precio = 1000;
         }
         else if (this.gameObject.name == "Pan_Up_Light")
         {
             calorias = 50;
             grasas = 50;
+            precio = 2000;
         }
         else if (this.gameObject.name == "Pan_Up_Heavy")
         {
             calorias = 200;
             grasas = 200;
+            precio = 3000;
         }
         //Vegetales
         else if (this.gameObject.name == "pepinillo")
