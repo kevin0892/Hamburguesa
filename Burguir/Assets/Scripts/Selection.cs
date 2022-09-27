@@ -13,6 +13,8 @@ public class Selection : MonoBehaviour
     public int currentSelection;
     int totalCharacters = 4;
     bool toggle = false;
+    public Producto[] productos;
+    public Producto productoSeleccionado;
 
     //UI-Navigation Items
     public TMP_Text notificationText;
@@ -20,6 +22,7 @@ public class Selection : MonoBehaviour
     void Start()
     {
         currentSelection = 1;
+        productoSeleccionado = productos[currentSelection-1];
     }
 
     void Update()
@@ -72,6 +75,7 @@ public class Selection : MonoBehaviour
             targetRot = targetRot + new Vector3(0, 90, 0);
             currentSelection = 1;
         }
+        productoSeleccionado = productos[currentSelection-1];
     }
 
     public void Anterior()
@@ -96,3 +100,8 @@ public class Selection : MonoBehaviour
 
 }
 
+[System.Serializable]
+public class Producto
+{
+    public int calorias, grasas, precio;
+}

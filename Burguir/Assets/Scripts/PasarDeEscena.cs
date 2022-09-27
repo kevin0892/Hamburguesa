@@ -15,5 +15,16 @@ public class PasarDeEscena : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+        public void PasarDeEscenada2()
+    {
+        SceneManager.LoadScene("Pago");
+    }
+
+    public void BackHome2()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+
 }
 
