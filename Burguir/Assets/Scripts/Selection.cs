@@ -9,6 +9,7 @@ public class Selection : MonoBehaviour
     Vector3 targetRot;
     Vector3 currentAngle;
     Vector3 posIni;
+    public string categoria;
     public float horizontalPos;
     public int currentSelection;
     int totalCharacters = 4;

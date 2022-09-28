@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4802,6 +4802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dd6b36c4fe373d4b8307543ca6febef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  categoria: Pan
   horizontalPos: 0
   currentSelection: 0
   productos:
@@ -4810,7 +4811,7 @@ MonoBehaviour:
     precio: 10000
   - calorias: 200
     grasas: 230
-    precio: 500
+    precio: 5000
   - calorias: 320
     grasas: 220
     precio: 8000
@@ -5254,21 +5255,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dd6b36c4fe373d4b8307543ca6febef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  categoria: PanAbajo
   horizontalPos: 0
   currentSelection: 0
   productos:
-  - calorias: 0
-    grasas: 0
-    precio: 0
-  - calorias: 0
-    grasas: 0
-    precio: 0
-  - calorias: 0
-    grasas: 0
-    precio: 0
-  - calorias: 0
-    grasas: 0
-    precio: 0
+  - calorias: 100
+    grasas: 100
+    precio: 10000
+  - calorias: 200
+    grasas: 230
+    precio: 5000
+  - calorias: 320
+    grasas: 220
+    precio: 8000
+  - calorias: 321
+    grasas: 131
+    precio: 7000
   productoSeleccionado:
     calorias: 0
     grasas: 0
@@ -7035,20 +7037,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dd6b36c4fe373d4b8307543ca6febef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  categoria: Vegetales
   horizontalPos: 0
   currentSelection: 0
   productos:
-  - calorias: 1263
-    grasas: 0
+  - calorias: 20
+    grasas: 45
     precio: 3000
   - calorias: 45
-    grasas: 0
+    grasas: 45
     precio: 4000
   - calorias: 156
     grasas: 56
     precio: 5000
-  - calorias: 451
-    grasas: 416
+  - calorias: 23
+    grasas: 40
     precio: 6000
   productoSeleccionado:
     calorias: 0
@@ -7568,21 +7571,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dd6b36c4fe373d4b8307543ca6febef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  categoria: Carnes
   horizontalPos: 0
   currentSelection: 0
   productos:
-  - calorias: 0
-    grasas: 0
-    precio: 0
-  - calorias: 0
-    grasas: 0
-    precio: 0
-  - calorias: 0
-    grasas: 0
-    precio: 0
-  - calorias: 0
-    grasas: 0
-    precio: 0
+  - calorias: 100
+    grasas: 300
+    precio: 1000
+  - calorias: 150
+    grasas: 250
+    precio: 2000
+  - calorias: 200
+    grasas: 300
+    precio: 3000
+  - calorias: 250
+    grasas: 300
+    precio: 4000
   productoSeleccionado:
     calorias: 0
     grasas: 0
@@ -21429,6 +21433,7 @@ MonoBehaviour:
   totalPrecio: 0
   statCalorias: {fileID: 359133168}
   stat_Grasas: {fileID: 1545973685}
+  stat_Precios: {fileID: 0}
 --- !u!4 &1879033039
 Transform:
   m_ObjectHideFlags: 0
@@ -29213,6 +29218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dd6b36c4fe373d4b8307543ca6febef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  categoria: 
   horizontalPos: 0
   currentSelection: 0
   productos: []

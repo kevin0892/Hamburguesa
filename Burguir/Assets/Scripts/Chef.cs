@@ -11,6 +11,7 @@ public class Chef : MonoBehaviour
     public int totalCal, totalGrasas, totalPrecio;
     public TMP_Text statCalorias;
     public TMP_Text stat_Grasas;
+    public TMP_Text stat_Precios;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,7 @@ public class Chef : MonoBehaviour
         totalPrecio = 0;
         for(int i = 0; i < productosSelec.Length; i++)
         {
+            Debug.Log("el producto es " + productosSelec[i].categoria + " y las calorias son "+ productosSelec[i].productoSeleccionado.calorias);
             totalCal += productosSelec[i].productoSeleccionado.calorias;
             totalGrasas += productosSelec[i].productoSeleccionado.grasas;
             totalPrecio += productosSelec[i].productoSeleccionado.precio;
