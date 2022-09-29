@@ -8,7 +8,6 @@ public class Chef : MonoBehaviour
 {
     public Selection[] productosSelec;
 
-    public int totalCal, totalGrasas, totalPrecio;
     public TMP_Text statCalorias;
     public TMP_Text stat_Grasas;
     public TMP_Text stat_Precios;
@@ -26,19 +25,19 @@ public class Chef : MonoBehaviour
 
     public void ActualizarDatos()
     {
-        totalCal = 0;
-        totalGrasas = 0;
-        totalPrecio = 0;
+        SingletonPrecio.instance.totalCal = 0;
+        SingletonPrecio.instance.totalGrasas = 0;
+        SingletonPrecio.instance.totalPrecio = 0;
         for(int i = 0; i < productosSelec.Length; i++)
         {
             Debug.Log("el producto es " + productosSelec[i].categoria + " y las calorias son "+ productosSelec[i].productoSeleccionado.calorias);
-            totalCal += productosSelec[i].productoSeleccionado.calorias;
-            totalGrasas += productosSelec[i].productoSeleccionado.grasas;
-            totalPrecio += productosSelec[i].productoSeleccionado.precio;
+            SingletonPrecio.instance.totalCal += productosSelec[i].productoSeleccionado.calorias;
+            SingletonPrecio.instance.totalGrasas += productosSelec[i].productoSeleccionado.grasas;
+            SingletonPrecio.instance.totalPrecio += productosSelec[i].productoSeleccionado.precio;
         }
 
-        statCalorias.text = totalCal.ToString();
-        stat_Grasas.text = totalGrasas.ToString();
+        statCalorias.text = SingletonPrecio.instance.totalCal.ToString();
+        stat_Grasas.text = SingletonPrecio.instance.totalGrasas.ToString();
         //statCalorias.text = totalCal.ToString();
     }
 }

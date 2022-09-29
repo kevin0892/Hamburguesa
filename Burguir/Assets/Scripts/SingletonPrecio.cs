@@ -2,12 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SingletonPrecio
+public class SingletonPrecio: MonoBehaviour
 {
-    public float precio;
-    
-    private void awake()
+    public static SingletonPrecio instance
+    { get; private set; }
+    public int totalCal, totalGrasas, totalPrecio;
+    private void Awake()
     {
-        if(instantiate)
+        // If there is an instance, and it's not me, delete myself.
+
+        if (instance != null && instance != this)
+        {
+            DestroyImmediate(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
+
+    private void Start()
+    {
+        DontDestroyOnLoad(gameObject);
     }
 }
