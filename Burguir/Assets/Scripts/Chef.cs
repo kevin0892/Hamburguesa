@@ -7,9 +7,7 @@ using TMPro;
 public class Chef : MonoBehaviour
 {
     public Selection[] productosSelec;
-
-    public TMP_Text statCalorias;
-    public TMP_Text stat_Grasas;
+    public Nutritional_table n_table;
     public TMP_Text stat_Precios;
     // Start is called before the first frame update
     void Start()
@@ -20,6 +18,9 @@ public class Chef : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        string name = productosSelec[1].productoSeleccionado.name;
+        print(name);
         ActualizarDatos();
     }
 
@@ -36,8 +37,8 @@ public class Chef : MonoBehaviour
             SingletonPrecio.instance.totalPrecio += productosSelec[i].productoSeleccionado.precio;
         }
 
-        statCalorias.text = SingletonPrecio.instance.totalCal.ToString();
-        stat_Grasas.text = SingletonPrecio.instance.totalGrasas.ToString();
+        //statCalorias.text = SingletonPrecio.instance.totalCal.ToString();
+        //stat_Grasas.text = SingletonPrecio.instance.totalGrasas.ToString();
         //statCalorias.text = totalCal.ToString();
     }
 }
