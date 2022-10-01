@@ -8,11 +8,12 @@ public class Selection : MonoBehaviour
 {
     Vector3 targetRot;
     Vector3 currentAngle;
-    Vector3 posIni;
+    public string categoria;
     public float horizontalPos;
     public int currentSelection;
     int totalCharacters = 4;
-    bool toggle = false;
+    public Producto[] productos;
+    public Producto productoSeleccionado;
 
     //UI-Navigation Items
     public TMP_Text notificationText;
@@ -20,38 +21,12 @@ public class Selection : MonoBehaviour
     void Start()
     {
         currentSelection = 1;
+        productoSeleccionado = productos[currentSelection-1];
     }
 
     void Update()
     {
 
-        /*if (Input.GetMouseButtonDown(0))
-        {
-            posIni = Input.mousePosition;
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            if ((posIni - Input.mousePosition).magnitude > 150)
-            {
-                horizontalPos = (posIni - Input.mousePosition).x;
-                if (horizontalPos < 0)
-                {
-                    Anterior();
-                }
-                else
-                {
-                    Siguiente();
-                }
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            Siguiente();
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            Anterior();
-        }*/
         currentAngle = new Vector3(0, Mathf.LerpAngle(currentAngle.y, targetRot.y, 2.0f * Time.deltaTime));
         transform.eulerAngles = currentAngle;
 
@@ -72,6 +47,7 @@ public class Selection : MonoBehaviour
             targetRot = targetRot + new Vector3(0, 90, 0);
             currentSelection = 1;
         }
+        productoSeleccionado = productos[currentSelection-1];
     }
 
     public void Anterior()
@@ -89,6 +65,7 @@ public class Selection : MonoBehaviour
             targetRot = targetRot - new Vector3(0, 90, 0);
             currentSelection = totalCharacters;
         }
+        productoSeleccionado = productos[currentSelection-1];
     }
 
 
@@ -96,3 +73,9 @@ public class Selection : MonoBehaviour
 
 }
 
+[System.Serializable]
+public class Producto
+{
+    public int calorias, grasas, precio;
+    public string name;
+}

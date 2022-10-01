@@ -14,58 +14,55 @@ public class Ingredient_Values : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        n_table = GameObject.Find("Titulo").GetComponent<Nutritional_table>();
-        //Panes_Arriba
-        if (this.gameObject.name == "Pan_Up")
-        {
-            calorias = 100;
-            grasas = 100;
-            precio = 1000;
-        }
-        else if (this.gameObject.name == "Pan_Up_Light")
-        {
-            calorias = 50;
-            grasas = 50;
-            precio = 2000;
-        }
-        else if (this.gameObject.name == "Pan_Up_Heavy")
-        {
-            calorias = 200;
-            grasas = 200;
-            precio = 3000;
-        }
-        //Vegetales
-        else if (this.gameObject.name == "pepinillo")
-        {
-            calorias = 10;
-            grasas = 15;
-        }
-        else if (this.gameObject.name == "tomate")
-        {
-            calorias = 16;
-            grasas = 15;
-        }
-        else if (this.gameObject.name == "lechuga")
-        {
-            calorias = 62;
-            grasas = 3;
-        }
-        //Carnes
-        else if (this.gameObject.name == "res")
-        {
-            calorias = 10;
-            grasas = 15;
-        }
-        else if (this.gameObject.name == "cerdo")
-        {
-            calorias = 16;
-            grasas = 15;
-        }
-        else if (this.gameObject.name == "pollo")
-        {
-            calorias = 62;
-            grasas = 3;
-        }
+        //n_table = GameObject.Find("Titulo").GetComponent<Nutritional_table>();
+        ////Panes_Arriba
+        //if (this.gameObject.name == "Pan_Up")
+        //{
+        //    calorias = 0;
+        //    grasas = 100;
+        //}
+        //else if (this.gameObject.name == "Pan_Up_Light")
+        //{
+        //    calorias = 0;
+        //    grasas = 50;
+        //}
+        //else if (this.gameObject.name == "Pan_Up_Heavy")
+        //{
+        //    calorias = 0;
+        //    grasas = 200;
+        //}
+        ////Vegetales
+        //else if (this.gameObject.name == "pepinillo")
+        //{
+        //    calorias = 0;
+        //    grasas = 15;
+        //}
+        //else if (this.gameObject.name == "tomate")
+        //{
+        //    calorias = 0;
+        //    grasas = 15;
+        //}
+        //else if (this.gameObject.name == "lechuga")
+        //{
+        //    calorias = 0;
+        //    grasas = 3;
+        //}
+        ////Carnes
+        //else if (this.gameObject.name == "res")
+        //{
+        //    calorias = 0;
+        //    grasas = 15;
+        //}
+        //else if (this.gameObject.name == "cerdo")
+        //{
+        //    calorias = 0;
+        //    grasas = 15;
+        //}
+        //else if (this.gameObject.name == "pollo")
+        //{
+        //    calorias = 0;
+        //    grasas = 3;
+        //}
     }
 
     // Update is called once per frame
@@ -84,11 +81,11 @@ public class Ingredient_Values : MonoBehaviour
                     {
 
                         selected = true;
-                        n_table.AddStat("statCalorias", this.calorias);
-                        if (this.gameObject.name == "res")
-                        {
-                            n_table.panelTerminos.SetActive(true);
-                        }
+                        //n_table.AddStat("statCalorias", this.calorias);
+                        //if (this.gameObject.name == "res")
+                        //{
+                        //    n_table.panelTerminos.SetActive(true);
+                        //}
                         if(this.gameObject.CompareTag("proteina"))
                         {
                             proteina = this.gameObject.name;
@@ -98,7 +95,7 @@ public class Ingredient_Values : MonoBehaviour
                     else if (selected == true)
                     {
                         selected = false;
-                        n_table.RemoveStat("statCalorias", this.calorias);
+                        //n_table.RemoveStat("statCalorias", this.calorias);
                     }
                 }
             }
@@ -112,19 +109,4 @@ public class Ingredient_Values : MonoBehaviour
         print(proteina);
     }
 
-    /*public void OnMouseDown()
-    {
-        if (selected==false)
-        {
-           
-            selected = true;
-            n_table.AddStat("statCalorias", this.calorias);
-        }
-        else if(selected == true)
-        {
-            selected = false;
-            n_table.RemoveStat("statCalorias", this.calorias);
-        }
-        
-    }*/
 }
