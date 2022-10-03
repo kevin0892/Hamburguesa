@@ -14839,7 +14839,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 511281569}
         m_TargetAssemblyTypeName: PasarDeEscena, Assembly-CSharp
-        m_MethodName: PasarDeEscenaPago
+        m_MethodName: GoToApi
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -15,7 +15,7 @@ public class PasarDeEscena : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-        public void PasarDeEscenaPago()
+    public void PasarDeEscenaPago()
     {
         SceneManager.LoadScene("Pago");
     }
@@ -25,6 +25,10 @@ public class PasarDeEscena : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void GoToApi()
+    {
+        SceneManager.LoadScene("testapi");
+    }
 
 }
 
