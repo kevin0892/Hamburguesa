@@ -23,12 +23,12 @@ public class PostMethod : MonoBehaviour
  
     IEnumerator PostData_Coroutine()
     {
-        string precio = SingletonPrecio.instance.totalPrecio.ToString();
+        string precio = "2340";//SingletonPrecio.instance.totalPrecio.ToString();
         outputArea.text = "Loading...";
-        string uri = "https://6327fad49a053ff9aaadb7e8.mockapi.io/Pedido";
+        string uri = "https://634fafae78563c1d82acbefa.mockapi.io/orders_list";
         WWWForm form = new WWWForm();
-        form.AddField("title", "test data");
-        form.AddField("Mesa", "003");
+        form.AddField("title", "Test 2");
+        form.AddField("Mesa", "004");
         form.AddField("Pedido", "Pan blanco, Res 3/4, Tomates, Pan blanco");
         form.AddField("Precio", precio);
         using (UnityWebRequest request = UnityWebRequest.Post(uri, form))
