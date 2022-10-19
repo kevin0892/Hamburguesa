@@ -1,14 +1,23 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 using TMPro;
- 
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
+
 public class GetMethod : MonoBehaviour
 {
     public GameObject go_Field;
     public TMP_InputField outputArea;
- 
+    public string stuff;
+
+    public class Fact
+    {
+        public string fact;
+        public int length;
+    }
     void Start()
     {
         go_Field = GameObject.Find("OutputArea");
@@ -28,7 +37,9 @@ public class GetMethod : MonoBehaviour
             if (request.isNetworkError || request.isHttpError)
                 outputArea.text = request.error;
             else
+                stuff = request.downloadHandler.text;
                 outputArea.text = request.downloadHandler.text;
+            
         }
     }
 }

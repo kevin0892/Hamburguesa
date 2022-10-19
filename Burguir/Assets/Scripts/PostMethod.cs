@@ -16,7 +16,7 @@ public class PostMethod : MonoBehaviour
 
     private void Update()
     {
-        print("hola" + SingletonPrecio.instance.totalPrecio);
+        //print("hola" + SingletonPrecio.instance.totalPrecio);
     }
 
     public void PostData() => StartCoroutine(PostData_Coroutine());
