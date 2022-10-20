@@ -1251,9 +1251,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2019622988}
         m_TargetAssemblyTypeName: PasarDeEscena, Assembly-CSharp
-        m_MethodName: PasarDeEscenada
+        m_MethodName: cuartainterfaz
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

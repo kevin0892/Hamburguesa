@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/testapi.unity
     guid: 51eb56a88e689634c9dbdb0a84f50217
+  - enabled: 1
+    path: Assets/Scenes/Despuespedido.unity
+    guid: 51a702b21ca54ad4d8f360e474dce6ce
   m_configObjects: {}
