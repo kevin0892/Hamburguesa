@@ -29,6 +29,10 @@ public class PasarDeEscena : MonoBehaviour
     {
         SceneManager.LoadScene("testapi");
     }
+    public void cuartainterfaz()
+    {
+        SceneManager.LoadScene("Despuespedido");
+    }
 
 }
 
