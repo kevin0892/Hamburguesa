@@ -19,9 +19,9 @@ public class Chef : MonoBehaviour
     void Update()
     {
         
-        string name = productosSelec[1].productoSeleccionado.name;
-        print(name);
-        ActualizarDatos();
+        //string name = productosSelec[1].productoSeleccionado.name;
+        //print(name);
+        //ActualizarDatos();
     }
 
     public void ActualizarDatos()
@@ -31,7 +31,8 @@ public class Chef : MonoBehaviour
         SingletonPrecio.instance.totalPrecio = 0;
         for(int i = 0; i < productosSelec.Length; i++)
         {
-            Debug.Log("el producto es " + productosSelec[i].categoria + " y las calorias son "+ productosSelec[i].productoSeleccionado.calorias);
+            Debug.Log("el producto es de la categoría " + productosSelec[i].categoria + ", y su tipo es: "+ productosSelec[i].productoSeleccionado.name+" y las calorias son "+ productosSelec[i].productoSeleccionado.calorias);
+            //Debug.Log("el producto es de la categoría " + productosSelec[i].categoria + ", y su tipo es: " + productosSelec[i].productoSeleccionado.name + " y las calorias son " + productosSelec[i].productoSeleccionado.calorias);
             SingletonPrecio.instance.totalCal += productosSelec[i].productoSeleccionado.calorias;
             SingletonPrecio.instance.totalGrasas += productosSelec[i].productoSeleccionado.grasas;
             SingletonPrecio.instance.totalPrecio += productosSelec[i].productoSeleccionado.precio;
