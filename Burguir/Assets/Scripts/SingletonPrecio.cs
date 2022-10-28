@@ -7,6 +7,8 @@ public class SingletonPrecio: MonoBehaviour
     public static SingletonPrecio instance
     { get; private set; }
     public int totalCal, totalGrasas, totalPrecio, precioIva;
+    public string numeroMesa;
+    public List<string> pedido;
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.

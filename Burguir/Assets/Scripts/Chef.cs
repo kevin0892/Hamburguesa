@@ -21,7 +21,7 @@ public class Chef : MonoBehaviour
         
         //string name = productosSelec[1].productoSeleccionado.name;
         //print(name);
-        //ActualizarDatos();
+        ActualizarDatos();
     }
 
     public void ActualizarDatos()
@@ -31,12 +31,19 @@ public class Chef : MonoBehaviour
         SingletonPrecio.instance.totalPrecio = 0;
         for(int i = 0; i < productosSelec.Length; i++)
         {
-            Debug.Log("el producto es de la categoría " + productosSelec[i].categoria + ", y su tipo es: "+ productosSelec[i].productoSeleccionado.name+" y las calorias son "+ productosSelec[i].productoSeleccionado.calorias);
+            //Debug.Log("el producto es de la categoría " + productosSelec[i].categoria + ", y su tipo es: "+ productosSelec[i].productoSeleccionado.name+" y las calorias son "+ productosSelec[i].productoSeleccionado.calorias);
             //Debug.Log("el producto es de la categoría " + productosSelec[i].categoria + ", y su tipo es: " + productosSelec[i].productoSeleccionado.name + " y las calorias son " + productosSelec[i].productoSeleccionado.calorias);
             SingletonPrecio.instance.totalCal += productosSelec[i].productoSeleccionado.calorias;
             SingletonPrecio.instance.totalGrasas += productosSelec[i].productoSeleccionado.grasas;
             SingletonPrecio.instance.totalPrecio += productosSelec[i].productoSeleccionado.precio;
+            //SingletonPrecio.instance.pedido.Add(productosSelec[i].productoSeleccionado.name);
         }
+
+        foreach(string str in SingletonPrecio.instance.pedido)
+        {
+            Debug.Log(str);
+        }
+       // Debug.Log(SingletonPrecio.instance.pedido);
 
         //statCalorias.text = SingletonPrecio.instance.totalCal.ToString();
         //stat_Grasas.text = SingletonPrecio.instance.totalGrasas.ToString();
