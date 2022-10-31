@@ -7,6 +7,7 @@ using TMPro;
 public class PostMethod : MonoBehaviour
 {
     // public TMP_InputField outputArea;
+    public Vegetables vegetablesSelec;
     public Selection[] productosSelec;
     public string pan_up, carne, pan_down;
  
@@ -37,6 +38,68 @@ public class PostMethod : MonoBehaviour
         {
             form.AddField(productosSelec[i].categoria, productosSelec[i].productoSeleccionado.name);
         }
+        if (vegetablesSelec != null)
+        {
+            if (vegetablesSelec.conLechuga == true && vegetablesSelec.conPepinillos == false && vegetablesSelec.conTomate == false)
+            {
+                form.AddField("Vegetales", "Lechuga");
+            }
+            else if (vegetablesSelec.conLechuga == true && vegetablesSelec.conPepinillos == true && vegetablesSelec.conTomate == false)
+            {
+                form.AddField("Vegetales", "Lechuga, pepinillos");
+            }
+            else if (vegetablesSelec.conLechuga== true && vegetablesSelec.conPepinillos == false && vegetablesSelec.conTomate == true)
+            {
+                form.AddField("Vegetales", "Lechuga, tomate");
+            }
+            else if (vegetablesSelec.conLechuga == true && vegetablesSelec.conPepinillos == true && vegetablesSelec.conTomate == true)
+            {
+                form.AddField("Vegetales", "Lechuga, pepinillos, tomate");
+            }
+            else if (vegetablesSelec.conLechuga == false && vegetablesSelec.conPepinillos == true && vegetablesSelec.conTomate == false)
+            {
+                form.AddField("Vegetales", "Pepinillos");
+            }
+            else if (vegetablesSelec.conLechuga == false && vegetablesSelec.conPepinillos == false && vegetablesSelec.conTomate == true)
+            {
+                form.AddField("Vegetales", "Tomate");
+            }
+            else if (vegetablesSelec.conLechuga == false && vegetablesSelec.conPepinillos == true && vegetablesSelec.conTomate == true)
+            {
+                form.AddField("Vegetales", "Pepinillos, tomate");
+            }
+            //Salsas
+            if (vegetablesSelec.roja == true && vegetablesSelec.mayo == false && vegetablesSelec.bbq == false)
+            {
+                form.AddField("Salsas", "Roja");
+            }
+            else if (vegetablesSelec.roja == true && vegetablesSelec.mayo == true && vegetablesSelec.bbq == false)
+            {
+                form.AddField("Salsas", "Roja, mayo");
+            }
+            else if (vegetablesSelec.roja == true && vegetablesSelec.mayo == false && vegetablesSelec.bbq == true)
+            {
+                form.AddField("Salsas", "Roja, bbq");
+            }
+            else if (vegetablesSelec.roja == true && vegetablesSelec.mayo == true && vegetablesSelec.bbq == true)
+            {
+                form.AddField("Salsas", "Roja, mayo, bbq");
+            }
+            else if (vegetablesSelec.roja == false && vegetablesSelec.mayo == true && vegetablesSelec.bbq == false)
+            {
+                form.AddField("Salsas", "Mayo");
+            }
+            else if (vegetablesSelec.roja == false && vegetablesSelec.mayo == false && vegetablesSelec.bbq == true)
+            {
+                form.AddField("Salsas", "Bbq");
+            }
+            else if (vegetablesSelec.roja == false && vegetablesSelec.mayo == true && vegetablesSelec.bbq == true)
+            {
+                form.AddField("Salsas", "Mayo, bbq");
+            }
+
+        }
+        
         form.AddField("Precio", precio);
         
         using (UnityWebRequest request = UnityWebRequest.Post(uri, form))
