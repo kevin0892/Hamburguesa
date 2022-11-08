@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Tiempoescena : MonoBehaviour
 {
-    public float tiempo = 10;
+    public float tiempo = 5;
 
     void Start()
     {

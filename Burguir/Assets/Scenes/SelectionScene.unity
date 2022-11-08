@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1028,7 +1028,7 @@ Transform:
   m_GameObject: {fileID: 66782349}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -0.043, y: -0.15, z: -2.34}
-  m_LocalScale: {x: 86.0245, y: 86.02451, z: 68.850655}
+  m_LocalScale: {x: 76.89988, y: 76.899895, z: 61.54767}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 650519228}
@@ -4305,9 +4305,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2097578430}
+      - m_Target: {fileID: 511281569}
         m_TargetAssemblyTypeName: PasarDeEscena, Assembly-CSharp
-        m_MethodName: PasarDeEscenada2
+        m_MethodName: PasarDeEscenaPago
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5578,19 +5578,19 @@ MonoBehaviour:
   - calorias: 100
     grasas: 100
     precio: 10000
-    name: Classic
+    name: Superior_Classic
   - calorias: 200
     grasas: 230
     precio: 5000
-    name: Heavy
+    name: Superior_Heavy
   - calorias: 0
     grasas: 0
     precio: 0
-    name: Empty
+    name: Superior_SinPan
   - calorias: 321
     grasas: 131
     precio: 7000
-    name: Light
+    name: Superior_Light
   productoSeleccionado:
     calorias: 0
     grasas: 0
@@ -5901,19 +5901,19 @@ MonoBehaviour:
   - calorias: 100
     grasas: 100
     precio: 10000
-    name: Classic
+    name: Inferior_Classic
   - calorias: 200
     grasas: 230
     precio: 5000
-    name: Heavy
+    name: Inferior_Heavy
   - calorias: 0
     grasas: 0
     precio: 0
-    name: Empty
+    name: Inferior_SinPan
   - calorias: 321
     grasas: 131
     precio: 7000
-    name: Light
+    name: Inferior_Light
   productoSeleccionado:
     calorias: 0
     grasas: 0
@@ -6630,6 +6630,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75dc90efea77d0b47a308dcec24398ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panelMesas: {fileID: 0}
+  inputMesa: {fileID: 0}
 --- !u!1 &519051664
 GameObject:
   m_ObjectHideFlags: 0
@@ -8509,6 +8511,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 695586015}
+        m_TargetAssemblyTypeName: Tipocarnes, Assembly-CSharp
+        m_MethodName: Siguiente
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &678675981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8557,6 +8571,7 @@ GameObject:
   m_Component:
   - component: {fileID: 695586014}
   - component: {fileID: 695586013}
+  - component: {fileID: 695586015}
   m_Layer: 0
   m_Name: selector_carnes
   m_TagString: Untagged
@@ -8588,9 +8603,9 @@ MonoBehaviour:
     grasas: 250
     precio: 2000
     name: pollo
-  - calorias: 200
-    grasas: 300
-    precio: 3000
+  - calorias: 0
+    grasas: 0
+    precio: 0
     name: empty
   - calorias: 250
     grasas: 300
@@ -8621,6 +8636,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &695586015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695586012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2152a2146a24e8f41819646f0e9196cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TipodeCarne: 0
 --- !u!1 &698302970
 GameObject:
   m_ObjectHideFlags: 0
@@ -9075,7 +9103,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 1, g: 0, b: 0, a: 1}
@@ -10232,7 +10260,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4874126678125670354, guid: 1bb8716c70c89ce4fab93643b0f872e9, type: 3}
+  - {fileID: 2100000, guid: e87a65a609a94e54fbfd244f39990d97, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10897,9 +10925,19 @@ MonoBehaviour:
   - {fileID: 2082081376}
   - {fileID: 1365203376}
   - {fileID: 149015415}
+  salsasToggles:
+  - {fileID: 952854679}
+  - {fileID: 1347911128}
+  - {fileID: 1537281345}
   pepinillos: {fileID: 1207408695}
   tomates: {fileID: 1818996628}
   lechuga: {fileID: 66782349}
+  conPepinillos: 0
+  conTomate: 0
+  conLechuga: 0
+  roja: 0
+  mayo: 0
+  bbq: 0
 --- !u!1 &857148101
 GameObject:
   m_ObjectHideFlags: 0
@@ -11282,7 +11320,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4874126678125670354, guid: 1bb8716c70c89ce4fab93643b0f872e9, type: 3}
+  - {fileID: 2100000, guid: 619dad0603d375f4da44df448a3130cf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14667,6 +14705,7 @@ GameObject:
   - component: {fileID: 1148617436}
   - component: {fileID: 1148617435}
   - component: {fileID: 1148617434}
+  - component: {fileID: 1148617437}
   m_Layer: 5
   m_Name: Pedir
   m_TagString: Untagged
@@ -14738,9 +14777,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 511281569}
-        m_TargetAssemblyTypeName: PasarDeEscena, Assembly-CSharp
-        m_MethodName: PasarDeEscenaPago
+      - m_Target: {fileID: 511281568}
+        m_TargetAssemblyTypeName: Nutritional_table, Assembly-CSharp
+        m_MethodName: PagoScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14788,6 +14827,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148617432}
   m_CullTransparentMesh: 1
+--- !u!114 &1148617437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148617432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03e1c108e28600247b31dabb649e48ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vegetablesSelec: {fileID: 855710829}
+  productosSelec:
+  - {fileID: 433417294}
+  - {fileID: 695586013}
+  - {fileID: 467868137}
+  pan_up: 
+  carne: 
+  pan_down: 
 --- !u!1 &1153129974
 GameObject:
   m_ObjectHideFlags: 0
@@ -15213,7 +15272,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4874126678125670354, guid: 1bb8716c70c89ce4fab93643b0f872e9, type: 3}
+  - {fileID: 2100000, guid: db334ab32eb8ee0468c009782d9e8f79, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15446,6 +15505,8 @@ MonoBehaviour:
   totalGrasas: 0
   totalPrecio: 0
   precioIva: 0
+  numeroMesa: 
+  pedido: []
 --- !u!4 &1195247493
 Transform:
   m_ObjectHideFlags: 0
@@ -17360,6 +17421,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75dc90efea77d0b47a308dcec24398ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panelMesas: {fileID: 0}
+  inputMesa: {fileID: 0}
 --- !u!4 &1315813171
 Transform:
   m_ObjectHideFlags: 0
@@ -21505,7 +21568,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4874126678125670354, guid: 1bb8716c70c89ce4fab93643b0f872e9, type: 3}
+  - {fileID: 2100000, guid: db334ab32eb8ee0468c009782d9e8f79, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -22110,7 +22173,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4874126678125670354, guid: 1bb8716c70c89ce4fab93643b0f872e9, type: 3}
+  - {fileID: 2100000, guid: e87a65a609a94e54fbfd244f39990d97, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -26756,7 +26819,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4874126678125670354, guid: 1bb8716c70c89ce4fab93643b0f872e9, type: 3}
+  - {fileID: 2100000, guid: 619dad0603d375f4da44df448a3130cf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -26998,6 +27061,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 100
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 695586015}
+        m_TargetAssemblyTypeName: Tipocarnes, Assembly-CSharp
+        m_MethodName: Anterior
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -27739,6 +27814,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75dc90efea77d0b47a308dcec24398ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panelMesas: {fileID: 0}
+  inputMesa: {fileID: 0}
 --- !u!1 &2107938213
 GameObject:
   m_ObjectHideFlags: 0

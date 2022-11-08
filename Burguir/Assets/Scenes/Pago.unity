@@ -1815,6 +1815,7 @@ GameObject:
   - component: {fileID: 1802293712}
   - component: {fileID: 1802293714}
   - component: {fileID: 1802293713}
+  - component: {fileID: 1802293715}
   m_Layer: 5
   m_Name: hamburguesa
   m_TagString: Untagged
@@ -1880,6 +1881,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1802293711}
   m_CullTransparentMesh: 1
+--- !u!114 &1802293715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802293711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 659e8dd11fbe0044f8197b121b14f5e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imagencarne: {fileID: 1802293713}
+  imagenes:
+  - {fileID: 21300000, guid: d08269f1ee830a846a3f0f7fd66e5d24, type: 3}
+  - {fileID: 21300000, guid: bd73e5e0ed07dfe458c5d271f6443edd, type: 3}
+  - {fileID: 21300000, guid: ba499697639d8714faf6e0d1aae443ae, type: 3}
+  - {fileID: 21300000, guid: ec85a2249017cba4b931a13129945ec3, type: 3}
 --- !u!1 &2019622983
 GameObject:
   m_ObjectHideFlags: 0
@@ -2004,6 +2023,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75dc90efea77d0b47a308dcec24398ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panelMesas: {fileID: 0}
+  inputMesa: {fileID: 0}
 --- !u!1 &2099933853
 GameObject:
   m_ObjectHideFlags: 0
