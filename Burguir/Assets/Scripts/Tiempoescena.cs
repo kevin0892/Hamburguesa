@@ -5,13 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class Tiempoescena : MonoBehaviour
 {
-    public float tiempo = 5;
+    
 
     void Start()
     {
-        Invoke("cambiar", tiempo);
+        StartCoroutine(Delay());
     }
 
+
+    IEnumerator Delay()
+    {
+        yield return new WaitForSecondsRealtime(4);
+        cambiar();
+    }
     // Update is called once per frame
     void cambiar()
     {

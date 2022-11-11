@@ -19,7 +19,7 @@ public class PasarDeEscena : MonoBehaviour
         else
         {
             
-            Debug.Log("Debes poner tu n�mero de mesa");
+            Debug.Log("Debes poner tu número de mesa");
         }
         
     }

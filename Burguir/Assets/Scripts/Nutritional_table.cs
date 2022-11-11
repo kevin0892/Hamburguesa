@@ -35,6 +35,10 @@ public class Nutritional_table : MonoBehaviour
         stat_Grasas.text = SingletonPrecio.instance.totalGrasas.ToString();
     }
 
+    public void OpenPanelTerminos()
+    {
+        panelTerminos.SetActive(true);
+    }
     public void ClosePanelTerminos()
     {
         panelTerminos.SetActive(false);
